@@ -17,8 +17,13 @@ def main():
     matrix = [[0 for x in range(9)] for y in range(9)]
     for x in range(9):
         for y in range(9):
-            matrix[x][y] = int(encoded_puzzle[x*9+y])
+            # This will fail if we use ? etc as wild character
+            temp = encoded_puzzle[x*9+y]
+            if(temp in ['.','*','?']):
+                temp = 0
+            matrix[x][y] = int(temp)
 
+    print(matrix)
     # Write first line of CNF
     variables = 0
     cnf = open("sudokuCNF.txt", "w")
@@ -33,10 +38,11 @@ def main():
     # Write clauses for existing sudoku values
     for x in range(9):
         for y in range(9):
-            if matrix[x][y] != 0:
+            if matrix[x][y] not in [0,'.','*','?']:
                 cnf.write(str(to_nineary(x+1, y+1, int(matrix[x][y]))) + " 0\n")
 
     # Write clauses for constraint: There is at least one number in each entry
+    # ie. There is at least a number [1-9] in each cell of the sudoku
     for x in range(1, 10):
         for y in range(1, 10):
             for z in range(1, 10):

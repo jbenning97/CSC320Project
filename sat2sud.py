@@ -16,7 +16,7 @@ def main():
                         break
             solved_f.write(row + "\n")
     else:
-        solved_f.write("The soduku puzzle in the represented CNF is unsatisfiable\n")
+        solved_f.write("The sudoku puzzle in the represented CNF is unsatisfiable\n")
     sat_f.close()
     solved_f.close()
 
