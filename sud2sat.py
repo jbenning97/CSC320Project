@@ -4,9 +4,9 @@ def to_nineary(x,y,z):
     return (x-1)*81 + (y-1)*9 + (z-1) + 1
 
 
-def main():
+def main(filename):
     # Encoding sudoku puzzle into string
-    with open("samplesudoku.txt") as f:
+    with open(filename) as f:
         lines = f.read().splitlines()
         encoded_puzzle = ""
         for i in range(1,10):
