@@ -18,7 +18,7 @@ def getNextPuzzle(myFile):
         match = puzzle_heading.match(line)
         if match:
             if puzzle_name == "":
-                puzzle_name = match.group(1) + match.group(2)
+                puzzle_name = match.group(0)
             else:
                 myFile.seek(last_pos)
                 break
@@ -46,7 +46,7 @@ def parseMiniSatOutput(output):
     cpu_time = float(cpu_time_match.group(1))
     return dict({"memory_used": mem_used, "cpu_time": cpu_time})
 
-def main(input_file):
+def main(input_file, output_file):
     print "Starting script"
     Puzzles = open(input_file, 'r')
     if Puzzles is None:
@@ -54,14 +54,14 @@ def main(input_file):
         exit(1)
     curr_puzzle = getNextPuzzle(Puzzles)
     data = []
+    Solved_Puzzles = open(output_file, 'w')
     while curr_puzzle is not None:
         puzzle_data = curr_puzzle[1]
         cnf_file_name = curr_puzzle[0].strip() + "_CNF.txt"
         sat_file_name = curr_puzzle[0].strip() + "_SAT.txt"
         cnf = makeCNF.main(puzzle_data)
-        cnf_file = open(cnf_file_name, "w")
-        cnf_file.write(cnf)
-        cnf_file.close()
+        with open(cnf_file_name, "w") as f:            
+            f.write(cnf)
         temp_file_name = "SAT_statistics.txt"
         command = "minisat "+ cnf_file_name + " " + sat_file_name + " > " + temp_file_name
         os.system(command)
@@ -70,10 +70,21 @@ def main(input_file):
         data_entry = parseMiniSatOutput(minisat_output)
         data_entry["Name"] = curr_puzzle[0].strip()
         data.append(data_entry)
+        with open(sat_file_name, "r") as f:
+            sat = f.read()
+        solved_puzzle = solveSudoku.main(sat)
+        Solved_Puzzles.write(curr_puzzle[0])
+        Solved_Puzzles.write(solved_puzzle)
+        Solved_Puzzles.write()
+        os.system("rm %s %s %s", cnf_file_name, sat_file_name, temp_file_name)
         curr_puzzle = getNextPuzzle(Puzzles)
         if curr_puzzle is None:
             print "Puzzles processed:"
             print len(data)
+    
+    Puzzles.close()
+    Solved_Puzzles.close()
+
 
 
         # os.system("minisat "+ cnf_file_name + " " + sat_file_name)
@@ -82,5 +93,9 @@ def main(input_file):
         
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        helpers.eprint("Command format: python master.py <input_file_name> <output_file_name>")
+        exit(1)
     input_file = sys.argv[1]
-    main(input_file)
+    output_file = sys.argv[2]
+    main(input_file, output_file)
