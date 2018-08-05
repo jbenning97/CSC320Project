@@ -8,8 +8,8 @@ Grid 01
 372689514
 814253769
 695417382
-Time to solve: 0.005067 s
-Memory used to solve: 0.63 MB
+Time to solve: 0.005121 s
+Memory used to solve: 0.61 MB
 
 Grid 02
 245981376
@@ -21,8 +21,8 @@ Grid 02
 391657842
 728349165
 654812793
-Time to solve: 0.004039 s
-Memory used to solve: 0.67 MB
+Time to solve: 0.004333 s
+Memory used to solve: 0.59 MB
 
 Grid 03
 462831957
@@ -34,8 +34,8 @@ Grid 03
 926178534
 834259671
 517643892
-Time to solve: 0.004207 s
-Memory used to solve: 0.6 MB
+Time to solve: 0.004329 s
+Memory used to solve: 0.56 MB
 
 Grid 04
 137256849
@@ -47,8 +47,8 @@ Grid 04
 256731498
 391428675
 784965123
-Time to solve: 0.003792 s
-Memory used to solve: 0.6 MB
+Time to solve: 0.004048 s
+Memory used to solve: 0.53 MB
 
 Grid 05
 523816749
@@ -60,7 +60,7 @@ Grid 05
 342789561
 915624378
 876351492
-Time to solve: 0.003011 s
+Time to solve: 0.003354 s
 Memory used to solve: 0.47 MB
 
 Grid 06
@@ -73,7 +73,7 @@ Grid 06
 265489713
 781236945
 349571826
-Time to solve: 0.004571 s
+Time to solve: 0.004924 s
 Memory used to solve: 0.61 MB
 
 Grid 07
@@ -86,7 +86,7 @@ Grid 07
 821567439
 796143825
 534892716
-Time to solve: 0.004028 s
+Time to solve: 0.00456 s
 Memory used to solve: 0.59 MB
 
 Grid 08
@@ -99,7 +99,7 @@ Grid 08
 124685397
 738941625
 659237418
-Time to solve: 0.003242 s
+Time to solve: 0.003428 s
 Memory used to solve: 0.49 MB
 
 Grid 09
@@ -112,7 +112,7 @@ Grid 09
 391682754
 587439621
 426517983
-Time to solve: 0.004247 s
+Time to solve: 0.004703 s
 Memory used to solve: 0.61 MB
 
 Grid 10
@@ -125,7 +125,7 @@ Grid 10
 689154732
 142837596
 573296841
-Time to solve: 0.004113 s
+Time to solve: 0.004455 s
 Memory used to solve: 0.59 MB
 
 Grid 11
@@ -138,7 +138,7 @@ Grid 11
 782513649
 395647281
 641298573
-Time to solve: 0.004078 s
+Time to solve: 0.004927 s
 Memory used to solve: 0.59 MB
 
 Grid 12
@@ -151,8 +151,8 @@ Grid 12
 834726591
 216459387
 759183264
-Time to solve: 0.00335 s
-Memory used to solve: 0.53 MB
+Time to solve: 0.003571 s
+Memory used to solve: 0.52 MB
 
 Grid 13
 397681524
@@ -164,8 +164,8 @@ Grid 13
 472893165
 531467289
 986125437
-Time to solve: 0.003745 s
-Memory used to solve: 0.55 MB
+Time to solve: 0.006416 s
+Memory used to solve: 0.71 MB
 
 Grid 14
 639218457
@@ -177,8 +177,8 @@ Grid 14
 352987614
 186345972
 947162583
-Time to solve: 0.005501 s
-Memory used to solve: 0.73 MB
+Time to solve: 0.004579 s
+Memory used to solve: 0.59 MB
 
 Grid 15
 697128345
@@ -190,8 +190,8 @@ Grid 15
 149852736
 752963814
 863714529
-Time to solve: 0.003685 s
-Memory used to solve: 0.58 MB
+Time to solve: 0.003965 s
+Memory used to solve: 0.53 MB
 
 Grid 16
 361725948
@@ -203,8 +203,8 @@ Grid 16
 746392185
 923518764
 815476329
-Time to solve: 0.003097 s
-Memory used to solve: 0.52 MB
+Time to solve: 0.003187 s
+Memory used to solve: 0.47 MB
 
 Grid 17
 359867124
@@ -216,7 +216,7 @@ Grid 17
 931476285
 465298713
 287153649
-Time to solve: 0.003048 s
+Time to solve: 0.003386 s
 Memory used to solve: 0.48 MB
 
 Grid 18
@@ -229,8 +229,8 @@ Grid 18
 951728634
 842356791
 673194285
-Time to solve: 0.004243 s
-Memory used to solve: 0.71 MB
+Time to solve: 0.004159 s
+Memory used to solve: 0.53 MB
 
 Grid 19
 743512986
@@ -242,8 +242,8 @@ Grid 19
 398675124
 417829653
 265134879
-Time to solve: 0.003583 s
-Memory used to solve: 0.67 MB
+Time to solve: 0.005215 s
+Memory used to solve: 0.66 MB
 
 Grid 20
 782614359
@@ -255,8 +255,8 @@ Grid 20
 326749581
 975183642
 814256937
-Time to solve: 0.003762 s
-Memory used to solve: 0.73 MB
+Time to solve: 0.00357 s
+Memory used to solve: 0.52 MB
 
 Grid 21
 428531796
@@ -268,8 +268,8 @@ Grid 21
 849615327
 752389641
 136724859
-Time to solve: 0.004181 s
-Memory used to solve: 0.73 MB
+Time to solve: 0.004289 s
+Memory used to solve: 0.59 MB
 
 Grid 22
 425781936
@@ -281,8 +281,8 @@ Grid 22
 987216453
 536478219
 241935678
-Time to solve: 0.004475 s
-Memory used to solve: 0.81 MB
+Time to solve: 0.004234 s
+Memory used to solve: 0.56 MB
 
 Grid 23
 348267951
@@ -294,8 +294,8 @@ Grid 23
 415798263
 982436715
 736512849
-Time to solve: 0.004296 s
-Memory used to solve: 0.6 MB
+Time to solve: 0.004155 s
+Memory used to solve: 0.55 MB
 
 Grid 24
 124986735
@@ -307,8 +307,8 @@ Grid 24
 712698453
 983547126
 546123879
-Time to solve: 0.003973 s
-Memory used to solve: 0.66 MB
+Time to solve: 0.004195 s
+Memory used to solve: 0.56 MB
 
 Grid 25
 361524789
@@ -320,8 +320,8 @@ Grid 25
 148796253
 235418976
 976235814
-Time to solve: 0.004367 s
-Memory used to solve: 0.75 MB
+Time to solve: 0.004649 s
+Memory used to solve: 0.66 MB
 
 Grid 26
 581479263
@@ -333,8 +333,8 @@ Grid 26
 172695384
 893247615
 465813792
-Time to solve: 0.004434 s
-Memory used to solve: 0.61 MB
+Time to solve: 0.005023 s
+Memory used to solve: 0.71 MB
 
 Grid 27
 387256419
@@ -346,7 +346,7 @@ Grid 27
 835674192
 271895634
 946312758
-Time to solve: 0.003913 s
+Time to solve: 0.004364 s
 Memory used to solve: 0.56 MB
 
 Grid 28
@@ -359,7 +359,7 @@ Grid 28
 738264915
 516937428
 924185673
-Time to solve: 0.003812 s
+Time to solve: 0.004146 s
 Memory used to solve: 0.55 MB
 
 Grid 29
@@ -372,8 +372,8 @@ Grid 29
 394287165
 652913847
 178654392
-Time to solve: 0.005101 s
-Memory used to solve: 0.79 MB
+Time to solve: 0.004698 s
+Memory used to solve: 0.6 MB
 
 Grid 30
 298175643
@@ -385,8 +385,8 @@ Grid 30
 312468957
 785912364
 946537812
-Time to solve: 0.004483 s
-Memory used to solve: 0.8 MB
+Time to solve: 0.0046 s
+Memory used to solve: 0.6 MB
 
 Grid 31
 761543289
@@ -398,8 +398,8 @@ Grid 31
 417369852
 953872416
 286154793
-Time to solve: 0.004246 s
-Memory used to solve: 0.6 MB
+Time to solve: 0.004978 s
+Memory used to solve: 0.73 MB
 
 Grid 32
 132649785
@@ -411,8 +411,8 @@ Grid 32
 619378452
 327154968
 485962371
-Time to solve: 0.004365 s
-Memory used to solve: 0.76 MB
+Time to solve: 0.004538 s
+Memory used to solve: 0.57 MB
 
 Grid 33
 698173542
@@ -424,8 +424,8 @@ Grid 33
 765931284
 213784695
 489265731
-Time to solve: 0.004031 s
-Memory used to solve: 0.64 MB
+Time to solve: 0.004056 s
+Memory used to solve: 0.52 MB
 
 Grid 34
 852716943
@@ -437,7 +437,7 @@ Grid 34
 786491235
 314258769
 529367814
-Time to solve: 0.00333 s
+Time to solve: 0.003786 s
 Memory used to solve: 0.52 MB
 
 Grid 35
@@ -450,8 +450,8 @@ Grid 35
 542879163
 937641258
 861325947
-Time to solve: 0.005822 s
-Memory used to solve: 0.66 MB
+Time to solve: 0.00412 s
+Memory used to solve: 0.55 MB
 
 Grid 36
 516289347
@@ -463,8 +463,8 @@ Grid 36
 961732485
 275648193
 483591672
-Time to solve: 0.00454 s
-Memory used to solve: 0.64 MB
+Time to solve: 0.003685 s
+Memory used to solve: 0.49 MB
 
 Grid 37
 945681723
@@ -476,8 +476,8 @@ Grid 37
 457326891
 612598437
 893417652
-Time to solve: 0.005321 s
-Memory used to solve: 0.76 MB
+Time to solve: 0.004606 s
+Memory used to solve: 0.56 MB
 
 Grid 38
 365942871
@@ -489,8 +489,8 @@ Grid 38
 296384715
 753691284
 481527936
-Time to solve: 0.00383 s
-Memory used to solve: 0.6 MB
+Time to solve: 0.003688 s
+Memory used to solve: 0.52 MB
 
 Grid 39
 134587296
@@ -502,8 +502,8 @@ Grid 39
 917348625
 462751938
 583692741
-Time to solve: 0.004495 s
-Memory used to solve: 0.67 MB
+Time to solve: 0.003882 s
+Memory used to solve: 0.52 MB
 
 Grid 40
 193672485
@@ -515,7 +515,7 @@ Grid 40
 826741539
 941523867
 357869142
-Time to solve: 0.003274 s
+Time to solve: 0.003887 s
 Memory used to solve: 0.55 MB
 
 Grid 41
@@ -528,7 +528,7 @@ Grid 41
 391682754
 587439621
 426517983
-Time to solve: 0.004376 s
+Time to solve: 0.004674 s
 Memory used to solve: 0.61 MB
 
 Grid 42
@@ -541,8 +541,8 @@ Grid 42
 231974568
 495286137
 678153492
-Time to solve: 0.004786 s
-Memory used to solve: 0.69 MB
+Time to solve: 0.004913 s
+Memory used to solve: 0.6 MB
 
 Grid 43
 469158372
@@ -554,8 +554,8 @@ Grid 43
 653941287
 294876135
 871325964
-Time to solve: 0.005499 s
-Memory used to solve: 0.69 MB
+Time to solve: 0.004475 s
+Memory used to solve: 0.59 MB
 
 Grid 44
 316549278
@@ -567,8 +567,8 @@ Grid 44
 845162793
 129753486
 763894152
-Time to solve: 0.006687 s
-Memory used to solve: 0.77 MB
+Time to solve: 0.004898 s
+Memory used to solve: 0.61 MB
 
 Grid 45
 586127943
@@ -580,8 +580,8 @@ Grid 45
 917246385
 352781496
 864395712
-Time to solve: 0.004535 s
-Memory used to solve: 0.71 MB
+Time to solve: 0.004725 s
+Memory used to solve: 0.67 MB
 
 Grid 46
 954213687
@@ -593,8 +593,8 @@ Grid 46
 281637459
 475129836
 396485712
-Time to solve: 0.004387 s
-Memory used to solve: 0.61 MB
+Time to solve: 0.005404 s
+Memory used to solve: 0.77 MB
 
 Grid 47
 159743862
@@ -606,8 +606,8 @@ Grid 47
 435821976
 861497523
 792356148
-Time to solve: 0.006395 s
-Memory used to solve: 0.64 MB
+Time to solve: 0.005729 s
+Memory used to solve: 0.67 MB
 
 Grid 48
 861357294
@@ -619,8 +619,8 @@ Grid 48
 789541632
 143826579
 625793418
-Time to solve: 0.005011 s
-Memory used to solve: 0.78 MB
+Time to solve: 0.004813 s
+Memory used to solve: 0.6 MB
 
 Grid 49
 294863517
@@ -632,8 +632,8 @@ Grid 49
 986134725
 521678349
 347295186
-Time to solve: 0.004904 s
-Memory used to solve: 0.67 MB
+Time to solve: 0.005968 s
+Memory used to solve: 0.74 MB
 
 Grid 50
 351286497
@@ -645,6 +645,6 @@ Grid 50
 829645371
 163792845
 547318926
-Time to solve: 0.004758 s
-Memory used to solve: 0.82 MB
+Time to solve: 0.004891 s
+Memory used to solve: 0.79 MB
 

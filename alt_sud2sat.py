@@ -41,8 +41,7 @@ def main(in_string):
         for y in range(9):
             if matrix[x][y] != 0:
                 variables += 1
-    cnf += "p cnf 729 " + str(8829 + variables) + "\n"
-
+    cnf += "p cnf 729 " + str(11988 + variables) + "\n"
 
     # Write clauses for existing sudoku values
     for x in range(9):
@@ -86,8 +85,43 @@ def main(in_string):
                             for l in range(1, 4):
                                 cnf += "-" + str(to_nineary((3*i) + x, (3*j) + y, z)) + " -" + str(to_nineary((3*i) + k, (3*j) + l, z)) + " 0\n"
 
+    # BEGINNING OF ALTERNATE ENCODING
 
-    # Done writing clauses. Run minisat solver on completed CNF
+    # Write clauses for constraint: There is at most one number in each entry
+    for x in range(1,10):
+        for y in range(1,10):
+            for z in range(1,9):
+                for i in range(z + 1, 10):
+                    cnf += "-" + str(to_nineary(x, y, z)) + " -" + str(to_nineary(x, y, i)) + " 0\n"
+
+
+    # Write clauses for constraint: Each number appears at least once in each row
+    for y in range(1, 10):
+        for z in range(1, 10):
+            for x in range(1, 10):
+                cnf += str(to_nineary(x, y, z)) + " "
+            cnf += " 0\n"
+
+    # Write clauses for constraint: Each number appears at least once in each column
+    for x in range(1, 10):
+        for z in range(1, 10):
+            for y in range(1, 10):
+                cnf += str(to_nineary(x, y, z)) + " "
+            cnf += " 0\n"
+
+    # Write clauses for constraint: Each number appears at least once in each 3x3 sub-grid
+    for z in range(1, 10):
+        for i in range(0, 3):
+            for j in range(0, 3):
+                for x in range(1, 4):
+                    for y in range(1, 4):
+                        cnf += str(to_nineary((3*i) + x, (3*j) + y, z)) + " "
+                cnf += " 0\n"
+
+
+
+
+# Done writing clauses. Run minisat solver on completed CNF
     return cnf
 
 if __name__ == "__main__":
