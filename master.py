@@ -5,6 +5,7 @@ import re
 import os
 import sys
 import subprocess
+import traceback
 
 def getNextPuzzle(myFile):
     puzzle_heading = re.compile(r"([Gg]rid) (\d*)")
@@ -40,7 +41,8 @@ def parseMiniSatOutput(output):
     mem_used_match = mem_used_re.search(output)
     cpu_time_match = cpu_time_re.search(output)
     if not mem_used_match or not cpu_time_match:
-        helpers.eprint("Could not get Memeory time or CPU time")
+        traceback.print_stack()
+        helpers.eprint("Could not get Memory time or CPU time")
         exit(1)
     mem_used = float(mem_used_match.group(1))
     cpu_time = float(cpu_time_match.group(1))
@@ -57,8 +59,8 @@ def main(input_file, output_file):
     Solved_Puzzles = open(output_file, 'w')
     while curr_puzzle is not None:
         puzzle_data = curr_puzzle[1]
-        cnf_file_name = curr_puzzle[0].strip() + "_CNF.txt"
-        sat_file_name = curr_puzzle[0].strip() + "_SAT.txt"
+        cnf_file_name = curr_puzzle[0].replace(" ","") + "_CNF.txt"
+        sat_file_name = curr_puzzle[0].replace(" ","") + "_SAT.txt"
         cnf = makeCNF.main(puzzle_data)
         with open(cnf_file_name, "w") as f:            
             f.write(cnf)
@@ -73,10 +75,10 @@ def main(input_file, output_file):
         with open(sat_file_name, "r") as f:
             sat = f.read()
         solved_puzzle = solveSudoku.main(sat)
-        Solved_Puzzles.write(curr_puzzle[0])
+        Solved_Puzzles.write(curr_puzzle[0]+ "\n")
         Solved_Puzzles.write(solved_puzzle)
-        Solved_Puzzles.write()
-        os.system("rm %s %s %s", cnf_file_name, sat_file_name, temp_file_name)
+        Solved_Puzzles.write("\n")
+        os.system("rm " + cnf_file_name + " " + sat_file_name + " " + temp_file_name)
         curr_puzzle = getNextPuzzle(Puzzles)
         if curr_puzzle is None:
             print "Puzzles processed:"
@@ -85,6 +87,21 @@ def main(input_file, output_file):
     Puzzles.close()
     Solved_Puzzles.close()
 
+    num_entries = len(data)
+    MB_used = 0
+    CPU_used = 0
+    quickest_time = 1
+    for entry in data:
+        MB_used += entry["memory_used"]
+        CPU_used += entry["cpu_time"]
+        if entry["cpu_time"] < quickest_time:
+            quickest_time = entry["cpu_time"]
+    
+    print quickest_time
+    MB_used = MB_used/num_entries
+    CPU_used = CPU_used/num_entries
+    print "Average CPU usage: " + str(CPU_used) + " s"
+    print "Average memory usage: " + str(MB_used) + " MB"
 
 
         # os.system("minisat "+ cnf_file_name + " " + sat_file_name)
