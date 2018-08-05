@@ -6,6 +6,7 @@ import os
 import sys
 import subprocess
 import traceback
+import time
 
 def getNextPuzzle(myFile):
     puzzle_heading = re.compile(r"([Gg]rid) (\d*)")
@@ -65,21 +66,25 @@ def main(input_file, output_file):
         with open(cnf_file_name, "w") as f:            
             f.write(cnf)
         temp_file_name = "SAT_statistics.txt"
-        command = "minisat "+ cnf_file_name + " " + sat_file_name + " > " + temp_file_name
+        # command = "minisat "+ cnf_file_name + " " + sat_file_name + " > " + temp_file_name
+        command = "cryptominisat5 " + cnf_file_name + " > " + temp_file_name
+        start_time = time.time()
         os.system(command)
-        with open(temp_file_name, "r") as f:
-            minisat_output = f.read()
-        data_entry = parseMiniSatOutput(minisat_output)
+        finish_time = time.time()
+        #with open(temp_file_name, "r") as f:
+        #    minisat_output = f.read()
+        # data_entry = parseMiniSatOutput(minisat_output)
+        data_entry = dict({"time": finish_time-start_time})
         data_entry["Name"] = curr_puzzle[0].strip()
         data.append(data_entry)
-        with open(sat_file_name, "r") as f:
-            sat = f.read()
-        solved_puzzle = solveSudoku.main(sat)
-        Solved_Puzzles.write(curr_puzzle[0] + "\n")
-        Solved_Puzzles.write(solved_puzzle)
-        Solved_Puzzles.write("Time to solve: " + str(data_entry["cpu_time"]) + " s\n")
-        Solved_Puzzles.write("Memory used to solve: " + str(data_entry["memory_used"]) + " MB\n\n")
-        os.system("rm " + cnf_file_name + " " + sat_file_name + " " + temp_file_name)
+        #with open(sat_file_name, "r") as f:
+        #    sat = f.read()
+        #solved_puzzle = solveSudoku.main(sat)
+        # Solved_Puzzles.write(curr_puzzle[0] + "\n")
+        # Solved_Puzzles.write(solved_puzzle)
+        # Solved_Puzzles.write("Time to solve: " + str(data_entry["cpu_time"]) + " s\n")
+        # Solved_Puzzles.write("Memory used to solve: " + str(data_entry["memory_used"]) + " MB\n\n")
+        os.system("rm " + cnf_file_name + " " + temp_file_name)
         curr_puzzle = getNextPuzzle(Puzzles)
         if curr_puzzle is None:
             print "Puzzles processed:"
@@ -91,14 +96,15 @@ def main(input_file, output_file):
     num_entries = len(data)
     MB_used = 0
     CPU_used = 0
+    quickest_time = 1
     for entry in data:
-        MB_used += entry["memory_used"]
-        CPU_used += entry["cpu_time"]
+        #MB_used += entry["memory_used"]
+        CPU_used += entry["time"]
     
-    MB_used = MB_used/num_entries
+    #MB_used = MB_used/num_entries
     CPU_used = CPU_used/num_entries
     print "Average CPU usage: " + str(CPU_used) + " s"
-    print "Average memory usage: " + str(MB_used) + " MB"
+    #print "Average memory usage: " + str(MB_used) + " MB"
 
 
         # os.system("minisat "+ cnf_file_name + " " + sat_file_name)
