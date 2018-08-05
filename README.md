@@ -25,7 +25,7 @@ Grid 01
 800203009
 005010300
 ```
-and outputs a file with the solved sudoke puzzles in the format:
+and outputs a file with the solved sudoku puzzles in the format:
 ```
 Grid 01
 483921657
