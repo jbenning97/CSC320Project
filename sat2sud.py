@@ -1,9 +1,11 @@
-def main():
-    sat_f = open("SATsolution.txt", "r")
-    is_solved = sat_f.readline().strip()
-    solved_f = open("solvedSudoku.txt", "w")
+import sys
+
+def main(in_string):
+    lines = in_string.splitlines()
+    is_solved = lines[0].strip()
+    solved_puzzle = ""
     if is_solved == 'SAT':
-        vars = sat_f.readline()
+        vars = lines[1]
         list_vars = vars.split(" ")
         for x in range(len(list_vars)):
             list_vars[x] = int(list_vars[x])
@@ -14,12 +16,21 @@ def main():
                     if list_vars[y*81 + 9*x + z] >= 0:
                         row += str(z + 1)
                         break
-            solved_f.write(row + "\n")
+            solved_puzzle += row + "\n"
     else:
-        solved_f.write("The sudoku puzzle in the represented CNF is unsatisfiable\n")
-    sat_f.close()
-    solved_f.close()
+        solved_puzzle += "The sudoku puzzle in the represented CNF is unsatisfiable\n"
+
+    return solved_puzzle
 
 
 if __name__ == "__main__":
-    main()
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    with open(input_file, "r") as in_f:
+        input_data = in_f.read()
+    if len(sys.argv) != 3:
+        helpers.eprint("Invalid format. Please use format: \"python sud2sat.py input.txt output.txt\"")
+        sys.exit()
+    with open(output_file, "w") as out_f:
+        out_f.write(main(input_data))
+        out_f.close()
