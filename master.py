@@ -75,9 +75,10 @@ def main(input_file, output_file):
         with open(sat_file_name, "r") as f:
             sat = f.read()
         solved_puzzle = solveSudoku.main(sat)
-        Solved_Puzzles.write(curr_puzzle[0]+ "\n")
+        Solved_Puzzles.write(curr_puzzle[0] + "\n")
         Solved_Puzzles.write(solved_puzzle)
-        Solved_Puzzles.write("\n")
+        Solved_Puzzles.write("Time to solve: " + str(data_entry["cpu_time"]) + " s\n")
+        Solved_Puzzles.write("Memory used to solve: " + str(data_entry["memory_used"]) + " MB\n\n")
         os.system("rm " + cnf_file_name + " " + sat_file_name + " " + temp_file_name)
         curr_puzzle = getNextPuzzle(Puzzles)
         if curr_puzzle is None:
@@ -94,10 +95,7 @@ def main(input_file, output_file):
     for entry in data:
         MB_used += entry["memory_used"]
         CPU_used += entry["cpu_time"]
-        if entry["cpu_time"] < quickest_time:
-            quickest_time = entry["cpu_time"]
     
-    print quickest_time
     MB_used = MB_used/num_entries
     CPU_used = CPU_used/num_entries
     print "Average CPU usage: " + str(CPU_used) + " s"
