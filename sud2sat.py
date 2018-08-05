@@ -6,10 +6,10 @@ def to_nineary(x,y,z):
     return (x-1)*81 + (y-1)*9 + (z-1) + 1
 
 
-def main(in_file):
+def main(in_string):
 
     # Encoding sudoku puzzle into string
-    lines = in_file.splitlines()
+    lines = in_string.splitlines()
     if len(lines) != 9:
         helpers.eprint("Invalid Sudoku puzzle in input file")
         sys.exit()
