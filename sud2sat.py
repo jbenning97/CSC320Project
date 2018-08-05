@@ -9,17 +9,16 @@ def to_nineary(x,y,z):
 def main(in_file):
 
     # Encoding sudoku puzzle into string
-    with open(in_file) as f:
-        lines = f.read().splitlines()
-        if len(lines) != 9:
+    lines = in_file.splitlines()
+    if len(lines) != 9:
+        helpers.eprint("Invalid Sudoku puzzle in input file")
+        sys.exit()
+    encoded_puzzle = ""
+    for i in range(9):
+        encoded_puzzle += lines[i]
+        if len(lines[i]) != 9:
             helpers.eprint("Invalid Sudoku puzzle in input file")
-            sys.exit()
-        encoded_puzzle = ""
-        for i in range(9):
-            encoded_puzzle += lines[i]
-            if len(lines[i]) != 9:
-                helpers.eprint("Invalid Sudoku puzzle in input file")
-        f.close()
+
 
     # Creating matrix from encoded puzzle
     matrix = [[0 for x in range(9)] for y in range(9)]
@@ -95,9 +94,11 @@ def main(in_file):
 if __name__ == "__main__":
     input_file = sys.argv[1]
     output_file = sys.argv[2]
+    with open(input_file, "r") as in_f:
+        input_data = in_f.read()
     if len(sys.argv) != 3:
         helpers.eprint("Invalid format. Please use format: \"python sud2sat.py input.txt output.txt\"")
         sys.exit()
     with open(output_file, "w") as out_f:
-        out_f.write(main(input_file))
+        out_f.write(main(input_data))
         out_f.close()
