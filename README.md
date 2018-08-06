@@ -6,7 +6,7 @@ An exercise in SAT solvers.
 ### Group Members
 * Jordan Benning V00853079
 * Jerusha Chua V00840826
-* Braiden Cutforth
+* Braiden Cutforth V00853754
 * Purvika Dutt
 
 ## Basic Task
@@ -47,3 +47,15 @@ Where input.txt is the list of the puzzles used for the basic task, and output.t
 
 #### How it works
 master.py starts by reading in puzzles from a specified input file. For each puzzle it invokes sud2sat, then passes the CNF to the minisat. Once minisat is done, the stdout output is parsed and the execution time and memory used are read. The file that was output by minisat is then read by sat2sud which creates the solved sudoku. Once we have the solved sudoku we append it to the output file and add the time it took and the memeory that was used to solve that puzzle. Once every puzzle is solved we output the number of puzzles we solved, the average time to solve them and the average amount of memory used.
+
+## Extended Tasks
+
+### Extended Task 1
+
+### Extended Task 2
+For this task, an alternate encoding is used. In order to run this differently than the basic task, the program alt_sud2sat.py can be ran instead of sud2sat.py (they accept the same input format) via the command line in the following format:
+```
+python alt_sud2sat.py input.txt output.txt
+```
+
+### Extended Task 3
