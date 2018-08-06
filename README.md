@@ -18,7 +18,6 @@ python sud2sat.py input.txt output.txt
 ```
 where input.txt is a file that contains a single Sudoku puzzle having the following format:
 ```
-Grid 01
 003020600
 900305001
 001806400
