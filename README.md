@@ -7,7 +7,7 @@ An exercise in SAT solvers.
 * Jordan Benning V00853079
 * Jerusha Chua V00840826
 * Braiden Cutforth V00853754
-* Purvika Dutt
+* Purvika Dutt V00849852
 
 ## Basic Task
 
